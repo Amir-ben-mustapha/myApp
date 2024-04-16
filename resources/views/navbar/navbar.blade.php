@@ -15,8 +15,24 @@
             <a class="nav-link @if(Request::route()->getName() == 'app_about') active @endif
                 " aria-current="page" href="{{route('app_about')}}  ">About</a>
           </li>
-
         </ul>
       </div>
+
+      <!--<div class="btn-group">
+        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Account
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
+          <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
+        </ul>
+      </div>
+        -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li><a class="nav-link @if(Request::route()->getName() == 'login') active @endif "href="{{route('login')}}">Login</a></li>
+            <li><a class="nav-link @if(Request::route()->getName() == 'register') active @endif "href="{{route('register')}}">Register</a></li>
+        </ul>
+        </div>
     </div>
   </nav>

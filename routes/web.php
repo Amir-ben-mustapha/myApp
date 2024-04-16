@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,11 +14,22 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+    //php artisan route:list
+    //composer require laravel/fortify
+    //php artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider"
+    //php artisan migrate
 
-Route::get('/', function () {
-    return view('home.home');
-})->name('app_home');
+Route::get('/', [HomeController::class,'home'])
+    ->name('app_home');
 
-Route::get('/about', function () {
-    return view('home.about');
-})->name('app_about');
+Route::get('/about', [HomeController::class,'about'])
+    ->name('app_about');
+
+Route::match(['get','post'], '/dashboard', [HomeController::class,'dashboard'])
+    ->name('app_dashboard');
+
+/*Route::match(['get','post'], '/login', [LoginController::class,'login'])
+    ->name('app_login');
+
+Route::match(['get','post'], '/register', [LoginController::class,'register'])
+    ->name('app_register');*/
