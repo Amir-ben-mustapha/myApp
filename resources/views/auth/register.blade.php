@@ -12,13 +12,13 @@
             <form class="row g-3" method="POST" action="{{route('register')}}">
                 @csrf
                 <div class="col-md-6">
-                    <label for="firstname" class="form-label">Firstname</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname" value="{{old('firstname')}}" required autocomplete="firstname" autofocus>
+                    <label for="firstname" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" value="{{old('firstname')}}" required autocomplete="name" autofocus>
                     <small class="text-danger fw-bold" id="error-register-firstname"> </small>
                 </div>
                 <div class="col-md-6">
-                    <label for="lastname" class="form-label">Lastname</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" value="{{old('lastname')}}" required autocomplete="lastname">
+                    <label for="lastname" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" value="{{old('lastname')}}" required autocomplete="family-name">
                     <small class="text-danger fw-bold" id="error-register-lastname"> </small>
                 </div>
                 <div class="col-md-12">
@@ -28,12 +28,12 @@
                 </div>
                 <div class="col-md-6">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" value="{{old('password')}}" required autocomplete="password">
+                    <input type="password" class="form-control" id="password" name="password" value="{{old('password')}}" required autocomplete="current-password">
                     <small class="text-danger fw-bold" id="error-register-password"> </small>
                 </div>
                 <div class="col-md-6">
-                    <label for="password-confirm" class="form-label">Password Confirmation</label>
-                    <input type="password-confirm" class="form-control" id="password-confirm" name="password-confirm" value="{{old('password-confirm')}}" required autocomplete="password-confirm">
+                    <label for="password-confirm" class="form-label">Password confirmation</label>
+                    <input type="password" class="form-control" id="password-confirm" name="password-confirm" value="{{old('password-confirm')}}" required autocomplete="current-password">
                     <small class="text-danger fw-bold" id="error-register-password-confirm"> </small>
                 </div>
                 <div class="col-md-12">
